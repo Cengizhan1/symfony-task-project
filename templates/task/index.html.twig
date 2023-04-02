@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div  style="text-align: center; display: flex; width: 900px" class="container"  >
+        <div>
+            <h1> Unassigned Tasks</h1>
+            {% for task in tasks %}
+                <hr>
+                Task name : {{ task.name }} <br>
+                Task level : {{ task.level }} <br>
+                Task time : {{ task.time }} <br>
+            {% endfor %}
+        </div>
+        <div style="width: 10%"></div>
+        <div style="border-left: 5px solid black;"></div>
+        <div style="width: 10%"></div>
+
+        <div>
+            <h1> Assigned Tasks</h1>
+            {% for task in assignedTasks %}
+                <hr>
+                Task name : {{ task.name }} <br>
+                Task level : {{ task.level }} <br>
+                Task time : {{ task.time }} <br>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

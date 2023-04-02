@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <div style="width: 300px">
+        <h1> Developers</h1>
+        {% for developer in developers %}
+
+            Developer name : {{ developer.name }} <br>
+            Developer level : {{ developer.level }} <br>
+            <hr>
+        {% endfor %}
+    </div>
+
+{% endblock %}
