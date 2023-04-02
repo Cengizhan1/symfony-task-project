@@ -19,7 +19,7 @@ class  Provider2Adapter{
         $tasks = file_get_contents($this->api);
         $tdecodeTasks = json_decode($tasks,true);
         $projectGenerator = new ProjectGenerator();
-        $projectId = $projectGenerator->generate();
+        $projectId = $projectGenerator->getProjectId();
         foreach ($tdecodeTasks as $decodeTask) {
             $title = array_keys($decodeTask);
             $content = array_keys($decodeTask[$title[0]]);

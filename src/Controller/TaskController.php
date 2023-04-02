@@ -19,21 +19,15 @@ class TaskController extends AbstractController
     /**
      * @Route("/saveTasks",name="saveTask")
      */
-    public function saveTask(): Void
+    public function saveTask(EntityManagerInterface $entityManager): Void
     {
-        $provider1Generator = new Provider1Adapter('http://www.mocky.io/v2/5d47f24c330000623fa3ebfa');
-        $provider1Generator->adapter();
-        $provider2Generator = new Provider2Adapter('http://www.mocky.io/v2/5d47f235330000623fa3ebf7');
-        $provider2Generator->adapter();
-        $assignTasks = new AssignTasks();
-        $assignTasks->assignTasks();
+//        $provider1Generator = new Provider1Adapter('http://www.mocky.io/v2/5d47f24c330000623fa3ebfa');
+//        $provider1Generator->adapter();
+//        $provider2Generator = new Provider2Adapter('http://www.mocky.io/v2/5d47f235330000623fa3ebf7');
+//        $provider2Generator->adapter();
+//        $assignTasks = new AssignTasks();
+//        $assignTasks->assignTasks();
 
-//        $query = $entityManager->createQuery(
-//            'SELECT SUM(p.time) * SUM(p.level) / count(p.name)
-//            FROM App\Entity\Task p'
-//        );
-//
-//        dd($query->getResult());
     }
 
     /**

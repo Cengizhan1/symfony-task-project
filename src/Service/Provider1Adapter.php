@@ -2,9 +2,6 @@
 
 namespace App\Service;
 
-use App\Entity\Project;
-use App\Entity\Task;
-use Doctrine\ORM\EntityManagerInterface;
 
 class  Provider1Adapter
 {
@@ -20,7 +17,7 @@ class  Provider1Adapter
         $tasks = file_get_contents($this->api);
         $tdecodeTasks = json_decode($tasks, true);
         $projectGenerator = new ProjectGenerator();
-        $projectId = $projectGenerator->generate();
+        $projectId = $projectGenerator->getProjectId();
         foreach ($tdecodeTasks as $decodeTask) {
             $taskGenerator = new TaskGenerator($decodeTask['id'], $decodeTask['zorluk'], $decodeTask['sure'],$projectId);
             $taskGenerator->saveTask();
